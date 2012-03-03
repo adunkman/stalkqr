@@ -1,8 +1,10 @@
+clone = require 'clone'
 StoredObject = require '../data/storedObject'
 
 class Model extends StoredObject
-  constructor: (attributes = {}) ->
-    @attributes = attributes
+  constructor: (attributes) ->
+    super
+    @attributes = clone(attributes) || {}
 
   save: (collection, callback) ->
     super(collection, @toJSON(), (err, attributes) =>
@@ -11,6 +13,6 @@ class Model extends StoredObject
     )
 
   toJSON: () ->
-    JSON.parse(JSON.stringify(@attributes))
+    clone(@attributes)
 
 module.exports = Model
