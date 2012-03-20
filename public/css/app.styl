@@ -1,12 +1,17 @@
 nav-height = 3em
 body-padding = 2em
 
+background-gradient(start, end)
+  background: -webkit-gradient(linear, left top, left bottom, from(start), to(end)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  start,  end); /* for firefox 3.6+ */ 
+
 body
   margin body-padding
   margin-top nav-height+body-padding
 
   font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
   color #222
+  line-height 1.5em
 
 nav
   position fixed
@@ -48,22 +53,39 @@ nav
     margin 0 (nav-item-padding / 2)
     padding 0 (nav-item-padding / 2)
 
-      
+    color #8cc84b
+    text-decoration none
 
-a
-  color #8cc84b
-  text-decoration none
-  &:hover
-    text-decoration underline
+    &:hover
+      text-decoration underline
 
-h1
-  font-size 3em
-  font-family verdana
-  margin-top 2em
-  margin-bottom 10px
+footer
+  margin -(body-padding)
+  margin-top body-padding
+  padding (body-padding / 2) body-padding
 
-ul.bulk_urls
-  li
-    float:left
-    list-style-type:none
-    margin:5px
+  border-top 1px solid #ddd
+  background-gradient #eee #fff
+  color #888
+
+  p 
+    margin 0
+
+#body
+  a
+    
+    text-decoration none
+    &:hover
+      text-decoration underline
+
+  h1
+    font-size 3em
+    font-family verdana
+    margin-top 2em
+    margin-bottom 10px
+
+  ul.bulk_urls
+    li
+      float:left
+      list-style-type:none
+      margin:5px

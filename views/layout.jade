@@ -5,25 +5,25 @@ html(lang="en")
     link(rel='stylesheet', href='/css/app.css')
 
   body
-    nav
-      ul
-        li.user
-          if isAuthenticated
-            a(href='/users/#{user.slugs[0]}')= user.name
-            ul.drop
-              li
-                a(href='/users/#{user.slugs[0]}/connections') Connections
-              li
-                a(href='/users/#{user.slugs[0]}/events') Events
-          else 
-            ul
-              li
-                a(href='/signup') Sign up
-              li
-                p or
-              li
-                a(href='/login') Log in
-        li
-          a(href='/') Stalkqr
+    nav: ul
+      li: a(href='/') Stalkqr
+
+      li.user
+        if isAuthenticated
+          a(href='/users/#{user.slugs[0]}')= user.name
+
+          ul.drop
+            li: a(href='/users/#{user.slugs[0]}/connections') Connections
+            li: a(href='/users/#{user.slugs[0]}/events') Events
+        else 
+          ul
+            li: a(href='/signup') Sign up
+            li: p or
+            li: a(href='/login') Log in
 
     #body!=body
+
+    footer
+      p An open source project lovingly made in Kansas City by 
+        a(href='http://nodekc.org', target='_blank') nodekc
+        | .
