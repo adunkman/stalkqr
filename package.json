@@ -14,7 +14,7 @@
 
   "devDependencies": {
     "should": "~v0.5.1",
-    "mocha": "v0.13.0"
+    "mocha": "~v0.13.0"
   },
 
   "scripts": {
