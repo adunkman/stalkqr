@@ -12,6 +12,9 @@ controllers =
   code: require './controllers/code'
   event: require './controllers/event'
 
+helpers = 
+  layout: require './helpers/layout'
+
 app.configure ->
   app.use express.logger format: ':method :url :status'
   app.use express.cookieParser()
@@ -31,6 +34,7 @@ app.configure 'production', ->
     compress: true
   app.use express.static path.join __dirname, 'public'
 
+helpers.layout.use app
 controllers.authentication.use app
 controllers.site.use app
 controllers.code.use app

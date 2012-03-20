@@ -1,6 +1,54 @@
+nav-height = 3em
+body-padding = 2em
+
 body
-  font-family 'Helveteca Neue', arial, sans-serif
-  color white
+  margin body-padding
+  margin-top nav-height+body-padding
+
+  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+  color #222
+
+nav
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height nav-height
+  line-height nav-height
+
+  background-color #222
+  box-shadow 0 1px 2px rgba(0, 0, 0, 0.5)
+  color #999
+
+  nav-item-padding = 0.5em
+
+  ul
+    margin 0
+    padding 0 (body-padding - nav-item-padding)
+
+    list-style-type none
+
+  li 
+    float left
+
+    &.user 
+      float right
+
+      ul
+        padding 0
+
+        li
+          float right
+  
+  p 
+    margin 0
+
+  a 
+    display block
+    margin 0 (nav-item-padding / 2)
+    padding 0 (nav-item-padding / 2)
+
+      
 
 a
   color #8cc84b
